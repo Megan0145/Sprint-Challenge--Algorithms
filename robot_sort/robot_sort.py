@@ -99,10 +99,12 @@ class SortingRobot:
         # Fill this out
 
         # this is essentially another implementation of the bubble sort algorithm that we worked on 
-        # initialize loop to only run if light is off (no swaps have been made)
-        while self.light_is_on() == False:
-            # set the light on the first pass
-            self.set_light_on()
+        # initialize loop to only run if light is on (no swaps have been made)
+        self.set_light_on()
+
+        while self.light_is_on():
+            # set the light off the first pass
+            self.set_light_off()
             # so long as the robot can move right (we can increment the index by one is list)
             while self.can_move_right():
                 # pick up the item at the current position 
@@ -120,8 +122,8 @@ class SortingRobot:
                     self.swap_item()
                     # move onto next position
                     self.move_right()
-                    # set the light to off because a swap has been made (ie we want the loop to run again like in the bubble sort algo)
-                    self.set_light_off()
+                    # set the light to on because a swap has been made (ie we want the loop to run again like in the bubble sort algo)
+                    self.set_light_on()
                 
                 else:
                 # else item at current position is smaller than that of the one that we're holding
@@ -132,9 +134,6 @@ class SortingRobot:
             
             while self.can_move_left():
                     self.move_left()
-
-
-
 
 
 

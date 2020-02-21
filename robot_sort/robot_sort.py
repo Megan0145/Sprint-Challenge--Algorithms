@@ -126,7 +126,7 @@ class SortingRobot:
                     self.set_light_on()
                 
                 else:
-                # else item at current position is smaller than that of the one that we're holding
+                # else item at current position is larger than that of the one that we're holding
                 # move back to previous position and pick up item 
                     self.move_left()
                     self.swap_item()

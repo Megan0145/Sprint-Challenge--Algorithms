@@ -110,7 +110,7 @@ class SortingRobot:
                 # increment index by one to continue down the list, go to next item
                 self.move_right()
 
-                # if the item it's currently holding is smaller than that of the one at this position
+                # if the item it's currently holding is larger than that of the one at this position
                 if self.compare_item() == 1:
                     # pick up the new item
                     self.swap_item()
@@ -124,7 +124,8 @@ class SortingRobot:
                     self.set_light_off()
                 
                 else:
-                # else pick up the next item and keep moving    
+                # else item at current position is smaller than that of the one that we're holding
+                # move back to previous position and pick up item 
                     self.move_left()
                     self.swap_item()
                     self.move_right()    
